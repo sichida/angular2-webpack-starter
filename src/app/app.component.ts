@@ -5,6 +5,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Home} from './home';
+import {HeroesComponent} from './heroes';
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 
@@ -49,6 +50,9 @@ import {RouterActive} from './router-active';
           <li router-active>
             <a [routerLink]=" ['About'] ">About</a>
           </li>
+          <li router-active>
+            <a [routerLink]=" ['Heroes'] ">Heroes</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -72,6 +76,7 @@ import {RouterActive} from './router-active';
   { path: '/home',  name: 'Home',  component: Home },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
+  { path: '/heroes', name: 'Heroes', component: HeroesComponent }
 ])
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
